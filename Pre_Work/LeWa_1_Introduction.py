@@ -18,14 +18,19 @@ Created on Thu Aug  5 21:44:26 2021
 # print("this is not a comment because it is inside quotes.")
 
 
+name = "Fred"
+
+f"He said his name is {name!r}"
+
+
 # Fibonacci Series
 
-a = 0
-b = 1
+# a = 0
+# b = 1
 
-while a<10:
-    print(a, end=",")
-    a , b = b, a+b
+# while a<10:
+#     print(a, end=",")
+#     a , b = b, a+b
     
 # Making a generalization of the problem:
 #   print(ai_1)
