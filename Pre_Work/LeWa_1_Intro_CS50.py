@@ -4,6 +4,11 @@ Created on Tue Aug 10 13:47:24 2021
 
 @author: costeros
 """
+
+# name = input("Introduce your name: \n")
+# print("Hello "+ name + ". How are you?")
+# print(f"Hello {name}. How are you?")
+
 ###############################################################################
 
 # x= input("x:")
@@ -135,7 +140,7 @@ Created on Tue Aug 10 13:47:24 2021
 #     print("cough")
     
 # main()
-
+###############################################################################
 # def main():
 #     number_of_cough = int(input("How many times do you want to cough?\n"))
 #     cough(number_of_cough)
@@ -166,73 +171,177 @@ Created on Tue Aug 10 13:47:24 2021
 
 # main()
     
-      
-    # x= input("x:")
-# y= input("y:")
+############################################################################### 
+# for i in range(4):
+#     print("?", end="")
+# print()
 
-# if x > y:
-#     print("x is higher as y")
-# elif x < y: 
-#     print("x is higher")
-# else:
-#     print("x is equal to y")
+# print("?" *4)
 
-# while True:
-#     print("hello, world")
 
-# i=3
-# while i >0:
-#     print("cough \n", end="")
-#     i-=1
-
-# for i in [1,2,3]:
-#     print("cough")
-    
 # for i in range(3):
-#     print("cough")
+#     print("#")
 
-
-from PIL import Image, ImageFilter
-
-before = Image.open("2014-11-02 14.55.54.jpg")
-after= before.filter(ImageFilter.BLUR)
-after.save("out.jpg")
-
-
-# x= input("x:")
-# y= input("y:")
-
-# if x > y:
-#     print("x is higher as y")
-# elif x < y: 
-#     print("x is higher")
-# else:
-#     print("x is equal to y")
-
-# while True:
-#     print("hello, world")
-
-# i=3
-# while i >0:
-#     print("cough \n", end="")
-#     i-=1
-
-# for i in [1,2,3]:
-#     print("cough")
-    
 # for i in range(3):
-#     print("cough")
+#     print("#")
+    
+# print("#\n"*3, end="")
 
 
-from PIL import Image, ImageFilter
+# for i in range(3):
+#     for j in range(3):
+#         print("#", end ="")
+#     print()
+###############################################################################
 
-before = Image.open("2014-11-02 14.55.54.jpg")
-after= before.filter(ImageFilter.BLUR)
-after.save("out.jpg")
+# age = int(input("What is your age?: "))
+# print(f"Your are at leat {age*365} days old.")
+
+###############################################################################
     
+# from time import sleep
+# i = 1
+# while True:
+#     print(i)
+#     sleep(0.1)
+#     i *=2
+###############################################################################
     
+# # scores = []
+# # scores.append(72)
+# # scores.append(73)
+# # scores.append(33)   
+# scores = [72,73,33]
+# print(f"Average: {sum(scores)/len(scores)}")
     
+###############################################################################
     
+# s = input("Input: ")
+# print(f"Output: ", end="")
+# # for i in range(len(s)):
+# #     print(s[i], end="")
+# for c in s:
+#     print(c, end="")
+# print()
+###############################################################################
+
+# s = input("Before: ")
+# print(f"After: {s.upper()}", end="\n")
+# print(f"After: {s.lower()}", end="")
+#print(s.upper())
+###############################################################################
+
+# from sys import argv
+
+# # for i in range(len(argv)):
+# #     print(argv[i])
+
+# for i in argv:
+#     print(i)
+###############################################################################
+# from sys import argv, exit
+
+
+# if len(argv) !=2:
+#     print("missing command-line argument")
+#     exit(1)
+# print(f"hello, {argv[1]}")
+# exit(0)
+###############################################################################
+
+# from sys import exit
+
+# names =["EMMA", "RODRIGO", "BRIAN", "DAVID"]
+# if "EMMA" in names:
+#     print("FOUND!!!")
+#     exit(0)
+# print("NOT FOUND!!!")
+# exit(1)
+###############################################################################    
+
+# from sys import exit
+
+# people = {
+#     "EMMA": "0355-69-3301",
+#     "RODRIGO": "0355-69-33012",
+#     "BRIAN": "0355-69-3303",
+#     "DAVID": "0355-69-3304"    
+#     }
+
+# whom_call= input("Of whom do you like the phone number?: ").upper()
+
+# if whom_call in people:
+#     print(f"The phone number of {whom_call} is {people[whom_call]}")
+#     exit(0)
+# print("NOT FOUND")
+# exit(0)
+###############################################################################
+# x =1
+# y =2
+
+# print(f"x is {x}, y is {y}")
+# x,y = y,x
+# print(f"x is {x}, y is {y}")
+###############################################################################
+# import csv
+
+# file = open("phonebook.csv", "a")
+
+# name = input("Name of the person: ")
+# number = input("Telephone number: ")
+
+# #file.write("Name, Number\n")
+
+# writer = csv.writer(file)
+# writer.writerow((name, number))
+# file.close()
+
+###############################################################################
+# import csv
+
+# name = input("Name of the person: ")
+# number = input("Telephone number: ")
+
+# #file.write("Name, Number\n")
+
+# with open("phonebook.csv", "a") as file:
+#     writer = csv.writer(file)
+#     writer.writerow((name, number))
+###############################################################################
+# import re
+
+# s = input("Do you agree?\n")
+
+# if re.search("y(es)?", s, re.IGNORECASE):
+#     print("Agreed.")
+# elif re.search("^n(o)$", s, re.IGNORECASE):
+#     print("Not agreed.")
+###############################################################################
+# words = input("Say something:\n").lower()
+# if "hello" in words:
+#     print("Hello to you too!")
+# elif "how are you" in words:
+#     print("I am well, thanks!")
+# elif "goodbye" in words:
+#     print("Goodbye to you too!")
+# else:
+#     print("Huh?")
+###############################################################################
+import speech_recognition as sp_rec
+
+recognizer = sp_rec.recognizer()
+with sp_rec.Microphone() as source:
+    print("Say something, please!")
+    audio = recognizer.listen(source)
+print("Goole Speech Recognition thinks you said:")
+print(recognizer.recognize_google(audio))
+
+
+
+
+
+
+
 
 # def discounted_price_fun(price, discount):
 #     price_reduction = price*discount

@@ -70,7 +70,7 @@ Created on Mon Sep 13 10:27:31 2021
 #     print(f"Found an odd number: {num}")
 
 #############################################################################
-# https://docs.python.org/3/tutorial/datastructures.html#looping-techniques
+#https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 
 # 5. Data Structures¶
 #5.1. More on Lists¶
@@ -191,6 +191,7 @@ Created on Mon Sep 13 10:27:31 2021
 # a = { x for x in "abracadabra" if x not in "abc"}
 # print(a)
 
+
 # 5.5. Dictionaries¶
 
 # tel = {"jack":4098, "shape": 4139}
@@ -205,9 +206,201 @@ Created on Mon Sep 13 10:27:31 2021
 # pepe_1 = {x: y for x, y in ["juan", "dani", "nacho"] and range(3)}                                                                                                                                                                                                                                                                                                                                           
 # print(pepe_1) # NOT WORK????
 
-#5.6. Looping Techniques
+# LeWagon exam:
+    
+# le_wagon_team = [
+#     {"name": "ben", "age": 31, "country": "France", "hobbies": ["coding", "biking"]},
+#     {"name": "quinn", "age": 26, "country": "Ireland", "hobbies": ["skiing"]},
+#     {"name": "alex", "age": 28, "country": "Austria", "hobbies": []}]
+# print(type(le_wagon_team))
+# print(type(le_wagon_team[0]))
+# print(type(le_wagon_team[0]["hobbies"]))
+# print(len(le_wagon_team))
+# print(len(le_wagon_team[0]))
+# print(len(le_wagon_team[0]["hobbies"]))
+# le_wagon_team[-1]["hobbies"] = ["video games"]
+# le_wagon_team[-1]["hobbies"].append("football")
+# le_wagon_team.append({"name": "Rebecca", "age": 27, "country": "Scotland", "hobbies": ["travel"]})
+# print(f"{le_wagon_team[0]['name']} ({le_wagon_team[0]['age']} years old)")
+
+# for i in range(len(le_wagon_team)):
+#     print(f"{le_wagon_team[i]['name']} ({le_wagon_team[i]['age']} years old)")
 
 
+# https://docs.python.org/3/tutorial/datastructures.html#looping-techniques
+#5.6. Looping Techniques#####################################################
+
+#knights = {"gallahad": "the pure", "robin": "the brave"}
+# for k, v in knights.items():
+#     print(k,v)
+
+# for i in range(len(le_wagon_team)):
+#     for k, v in le_wagon_team[i].items():
+#         print(k,v)
+
+# for i, v in enumerate(le_wagon_team):
+#     print(i,v)
+
+# questions = ['name', 'quest', 'favorite color']
+# answers = ['lancelot', 'the holy grail', 'blue']
+# for q, a in zip(questions, answers):
+#     print(f" What is your {q}? It is {a}.")
+# #print(f" What is your {questions[0]}? It is {answers[0]}.")
+
+# for i in reversed(range(1,10, 2)):
+#     print(i)
+
+# basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+# for i in basket:
+#     print(i)
+# for i in sorted(basket):
+#     print(i)
+# for i in sorted(set(basket)):
+#     print(i)
+    
+# import math
+# raw_data = [56.2, float('NaN'), 51.7, 55.3, 52.5, float('NaN'), 47.8]    
+# filtered_data = []
+
+# for value in raw_data:
+#     if not math.isnan(value):
+#         filtered_data.append(value)
+# filtered_data
+    
+    
+# 5.7. More on Conditions  
+
+# string_1, string_2, string_3 = "", "Trondheim", "Hammer Dance"
+# non_null = string_1 or string_2 or string_3
 
 
+#https://docs.python.org/3/tutorial/stdlib.html
+#10. Brief Tour of the Standard Library
 
+# import os
+
+# work_dir = os.getcwd()              # Return the current working directory
+# os.chdir("/user/luis....")          # Change current working directory
+# os.system("mkdir prueba_en_python") # Run the command mkdir in the system shell
+
+# dir(os)                             # Returns a list of all modle functions
+# help(os)                            # Returns an extensive manual page created from the module's docstrings
+
+
+# import shutil
+# # shutil.copyfile('data.db', 'archive.db')
+# # shutil.move('/build/executables', 'installdir')
+# https://docs.python.org/3/library/shutil.html#module-shutil
+# import glob
+# glob.glob("*.py")
+
+# import sys
+# sys.stderr.write("Esto ha estallado!!!")
+    
+# import re
+# found_f = re.findall(r"\bf[a-z]*", "which foot or hand fell fastest afford")
+# found_subpat = re.sub(r'(\b[a-z]+) \1', r'\1', "cat in the the hat")
+    
+# tea = "tea for too"
+# repla = tea.replace("too", "two")    
+
+#10.6 Mathematics
+# https://docs.python.org/3/tutorial/stdlib.html
+
+# import math
+
+# value_cos = math.cos(math.pi/4)
+# value_log = math.log(1024,2)
+# value_log_e = math.log(math.e)
+    
+# import random
+# fruit = random.choice(["aple", "pear", "banana"])
+# ran = random.sample(range(100), 10)    
+# ran_ran = round(random.random(),2)
+# ran_int = random.randrange(10)
+    
+# import statistics as sta
+
+# data = [2.75, 1.75, 1.25, 0.25, 0.5, 1.25, 3.5]
+# data_sorted = sorted(data)
+
+# data_mean = sta.mean(data)
+# # https://en.wikipedia.org/wiki/Mean
+
+# data_median = sta.median(data)
+# # https://en.wikipedia.org/wiki/Median
+# data_sorted_set = set(data_sorted)
+# data_median_sorted_set = sta.median(data_sorted_set)
+# print(f"the median of the sorted & setted data, {data_median_sorted_set}, is different to the median of the original data, {data_median}, because by using set, the repeated values are not taking into account.")
+
+# data_variance = sta.variance(data)
+# # https://en.wikipedia.org/wiki/Variance
+# data_variance_sorted_set = sta.variance(data_sorted_set)
+
+    
+# 10.8. Dates and Times 
+    
+# from datetime import date
+
+# now = date.today()  # year, month, day
+# printed = now.strftime("Year: %y, Month: %m, Day: %d")
+# print(printed)
+# whole_date = now.strftime("%m-%d-%y. %d %b %Y is a %A on the %d day of %B.")
+# print(whole_date)    
+
+# # dates support calendar arithmetic
+# birthday = date(1979, 2, 2)
+# age = now - birthday
+# days = age.days
+# print(f"Luis has lived until now {days}")
+    
+    
+# 10.9. Data Compression
+
+# 10.10. Performance Measurement
+    
+# from timeit import Timer
+
+# time_1 = Timer("t=a; a=b;b=t","a=1; b=2").timeit()
+# time_2 = Timer("a,b=b,a", "a=1; b=2").timeit()
+
+# See more info about profile and pstats
+# https://docs.python.org/3/library/profile.html#module-pstats
+# https://docs.python.org/3/library/profile.html#module-profile
+
+# 10.11. Quality Control
+    
+# def average(values):
+#     """Computes the arithmetic mean of a list of numbers.
+#     >>> print(average([20, 30, 70]))
+#     40.0 
+#     """
+#     return sum(values) / len(values)
+
+# import doctest
+# doctest.testmod()
+
+# import unittest
+    
+    
+# 10.12. Batteries Included¶
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
