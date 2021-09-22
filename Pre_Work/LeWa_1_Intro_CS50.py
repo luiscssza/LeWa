@@ -327,18 +327,37 @@ Created on Tue Aug 10 13:47:24 2021
 # else:
 #     print("Huh?")
 ###############################################################################
-import speech_recognition as sp_rec
+# import speech_recognition as sp_rec
 
-recognizer = sp_rec.recognizer()
-with sp_rec.Microphone() as source:
-    print("Say something, please!")
-    audio = recognizer.listen(source)
-print("Goole Speech Recognition thinks you said:")
-print(recognizer.recognize_google(audio))
+# recognizer = sp_rec.Recognizer()
+# with sp_rec.Microphone() as source:
+#     print("Say something, please!")
+#     audio = recognizer.listen(source)
+# print("Google Speech Recognition thinks you said:")
+# print(recognizer.recognize_google(audio))
 
+# ##############################################################################
+#Reference: https://pypi.org/project/SpeechRecognition/
 
+# import speech_recognition as sp_rec
+# import re
 
+# # Obtain audio from the microphone
+# recognizer = sp_rec.Recognizer()
+# with sp_rec.Microphone() as source:
+#     print("Say something, please!")
+#     audio = recognizer.listen(source)
 
+# # Recognize speech using Google Speech Recognition
+# words = recognizer.recognize_google(audio)
+
+# # Respond to speech
+# matches = re.search("my name is (.*)", words)
+
+# if matches:
+#     print(f"Hey, {matches[1]}.")
+# else:
+#     print("Hey you.")
 
 
 
